@@ -7,7 +7,7 @@
 
 
 #import "RNTweet.h"
-#import <TwitterKit/TwitterKit.h>
+#import <TwitterKit/TWTRKit.h>
 #import <React/RCTUtils.h>
 #import <React/RCTConvert.h>
 
