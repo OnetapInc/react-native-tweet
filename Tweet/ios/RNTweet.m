@@ -226,7 +226,7 @@ RCT_EXPORT_METHOD(user: (RCTPromiseResolveBlock)resolve
     NSDictionary *params = @{@"user_id": lastSession.userID};
     NSURLRequest *request = [client
                              URLRequestWithMethod:@"GET"
-                             URL:showEndpoint
+                             URLString:showEndpoint
                              parameters:params
                              error:&clientError];
 
@@ -390,7 +390,7 @@ RCT_EXPORT_METHOD(retweet:(NSString * )tweetId
     NSLog(@"endpoint: %@", endpoint);
     NSLog(@"params: %@",params);
 
-    NSURLRequest *request = [client URLRequestWithMethod:@"POST" URL:endpoint parameters:params error:&clientError];
+    NSURLRequest *request = [client URLRequestWithMethod:@"POST" URLString:endpoint parameters:params error:&clientError];
 
     if (request) {
       [client sendTwitterRequest:request completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -473,7 +473,7 @@ RCT_EXPORT_METHOD(api:(NSDictionary *)options
   NSLog(@"%@",params);
   NSError *clientError;
 
-  NSURLRequest *request = [client URLRequestWithMethod:method URL:endpoint parameters:params error:&clientError];
+  NSURLRequest *request = [client URLRequestWithMethod:method URLString:endpoint parameters:params error:&clientError];
 
   if (request) {
     [client sendTwitterRequest:request completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
